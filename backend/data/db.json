@@ -1,0 +1,13 @@
+{
+  "ids": {
+    "User": 7
+  },
+  "models": {
+    "User": {
+      "2": "{\"firstName\":\"Harry\",\"middleName\":\"\",\"lastName\":\"Potter\",\"email\":\"harry.potter@gmail.com\",\"address\":\"Hogwards\",\"phoneNumber\":\"9878787662\",\"role\":\"Admin\",\"createdOn\":\"2022-10-08T09:33:07.186Z\",\"id\":2,\"modifiedOn\":\"2022-10-13T06:47:49.000Z\"}",
+      "3": "{\"firstName\":\"Harshad\",\"middleName\":\"Sunil\",\"lastName\":\"Kadam\",\"email\":\"harshad.kadam@sourcefuse.com\",\"address\":\"Mumbai, Maharashtra, India\",\"phoneNumber\":\"8454898750\",\"role\":\"Subscriber\",\"createdOn\":\"2022-10-09T06:43:17.350Z\",\"id\":3}",
+      "4": "{\"firstName\":\"Tony\",\"lastName\":\"Stark\",\"email\":\"tony.stark@avengers.com\",\"address\":\"Avengers Headquarter\",\"phoneNumber\":\"1234567890\",\"role\":\"Admin\",\"createdOn\":\"2022-10-13T06:53:09.347Z\",\"id\":4}",
+      "6": "{\"firstName\":\"asdasda\",\"middleName\":\"sdasd\",\"lastName\":\"asdsad\",\"email\":\"saasdsad\",\"address\":\"asdasdasd\",\"phoneNumber\":\"9893791273\",\"role\":\"Admin\",\"createdOn\":\"2022-10-13T07:03:26.609Z\",\"id\":6,\"modifiedOn\":\"2022-10-13T07:51:37.000Z\"}"
+    }
+  }
+}

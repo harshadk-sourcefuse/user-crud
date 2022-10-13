@@ -1,0 +1,105 @@
+<div class="d-flex justify-content-center my-4">
+    <button (click)="loadInitialData()" class="btn btn-info">{{state[currentState]}}</button>
+</div>
+
+<div *ngIf="currentState == 1" class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Role</th>
+            <th>Address</th>
+            <th>Created On</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let user of users" [id]="'user-'+user.id">
+            <td [id]="'user-'+user.id+'-firstName'">
+                <div *ngIf="user.currentState">
+                    <input class="form-control" type="text" [(ngModel)]="user.firstName">
+                </div>
+                <div *ngIf="!user.currentState">
+                    {{user.firstName}}
+                </div>
+                <div *ngIf="user.currentState && !user.firstName" class="text-danger">
+                    First Name is required
+                </div>
+            </td>
+            <td [id]="'user-'+user.id+'-middleName'">
+                <div *ngIf="user.currentState">
+                    <input class="form-control" type="text" [(ngModel)]="user.middleName">
+                </div>
+                <div *ngIf="!user.currentState">
+                    {{user.middleName}}
+                </div>
+            </td>
+            <td [id]="'user-'+user.id+'-lastName'">
+                <div *ngIf="user.currentState">
+                    <input class="form-control" type="text" [(ngModel)]="user.lastName">
+                </div>
+                <div *ngIf="!user.currentState">
+                    {{user.lastName}}
+                </div>
+            </td>
+            <td [id]="'user-'+user.id+'-email'">
+                <div *ngIf="user.currentState">
+                    <input class="form-control" type="text" [(ngModel)]="user.email">
+                </div>
+                <div *ngIf="!user.currentState">
+                    {{user.email}}
+                </div>
+                <div *ngIf="user.currentState && !user.email" class="text-danger">
+                    Email is required
+                </div>
+            </td>
+            <td [id]="'user-'+user.id+'-phoneNumber'">
+                <div *ngIf="user.currentState">
+                    <input class="form-control" type="text" [(ngModel)]="user.phoneNumber">
+                </div>
+                <div *ngIf="!user.currentState">
+                    {{user.phoneNumber}}
+                </div>
+            </td>
+            <td [id]="'user-'+user.id+'-role'">
+                <div *ngIf="user.currentState">
+                    <select class="form-control" [(ngModel)]="user.role">
+                        <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+                    </select>
+                </div>
+                <div *ngIf="!user.currentState">
+                    {{user.role}}
+                </div>
+                <div *ngIf="user.currentState && !user.role" class="text-danger">
+                    Role is required
+                </div>
+            </td>
+            <td [id]="'user-'+user.id+'-address'">
+                <div *ngIf="user.currentState">
+                    <textarea class="form-control" type="text" [(ngModel)]="user.address">
+                        </textarea>
+                </div>
+                <div *ngIf="!user.currentState">
+                    {{user.address}}
+                </div>
+            </td>
+            <td  [id]="'user-'+user.id+'-createdOn'">
+                {{user.createdOn}}
+            </td>
+            <td  [id]="'user-'+user.id+'-action'">
+                <div *ngIf="!user.currentState">
+                    <button class="btn btn-primary"(click)="editUser(user)">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+                </div>
+                <div *ngIf="user.currentState">
+                    <button class="btn btn-primary" (click)="saveUserDetails(user)">Save</button>
+                    <button class="btn btn-secondary" (click)="cancelEditUser(user)">Cancel</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="d-flex justify-content-end" *ngIf="showAddNewRow">
+        <button class="btn btn-primary mr-3" (click)="addUser()"> Add New </button>
+    </div>
+</div>
